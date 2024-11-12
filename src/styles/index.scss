@@ -1,0 +1,31 @@
+@use './v-transition.scss';
+:root {
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+}

@@ -1,0 +1,38 @@
+{
+  "name": "playground",
+  "alias": "atl",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "await-to-js": "^3.0.0",
+    "monaco-editor": "^0.52.0",
+    "vue": "^3.5.12",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@iconify-json/fluent-emoji-flat": "^1.2.1",
+    "@iconify-json/solar": "^1.2.1",
+    "@types/node": "^22.8.7",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "naive-ui": "^2.40.1",
+    "sass": "^1.80.6",
+    "typescript": "~5.6.2",
+    "unocss": "^0.63.6",
+    "vite": "^5.4.10",
+    "vue-tsc": "^2.1.8"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "arrowParens": "always",
+    "printWidth": 110,
+    "tabWidth": 2
+  }
+}
