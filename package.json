@@ -17,7 +17,7 @@
     "vue-router": "4"
   },
   "devDependencies": {
-    "@iconify-json/fluent-emoji-flat": "^1.2.1",
+    "@iconify-json/fluent-emoji": "^1.2.1",
     "@iconify-json/solar": "^1.2.1",
     "@types/babel__standalone": "^7.1.9",
     "@types/node": "^22.8.7",

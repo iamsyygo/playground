@@ -1,42 +1,47 @@
 <template>
-    <n-layout>
-        <n-layout-header :inverted="preferenceState.themeValue === 'dark'" bordered
-            :style="{ height: preferenceState.headerHeight + 'px' }">1</n-layout-header>
-        <n-layout-content content-style="padding: 24px;">
-            <n-split direction="horizontal" style="height: 200px" :max="0.75" :min="0.25">
-                <template #1>
-                    Pane 1
-                </template>
-                <template #2>
-                    Pane 2
-                </template>
-            </n-split>
-        </n-layout-content>
-    </n-layout>
+  <Layout>
+    <template #left>
+      <div ref="codeRef" w-full h-full></div>
+    </template>
+  </Layout>
 </template>
+
 <script setup lang="ts">
-import { NLayout, NLayoutHeader, NLayoutContent, NSplit } from 'naive-ui';
-import { transform } from '@babel/standalone';
+import { onMounted, useTemplateRef, watch } from 'vue';
+import Layout from './Layout.vue';
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
+import 'monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution';
+import 'monaco-editor/esm/vs/basic-languages/typescript/typescript.contribution';
 import { preferenceState } from '@/store/preferences';
+import { useThemeVars } from 'naive-ui';
+const codeRef = useTemplateRef('codeRef');
+let MonacoCodeEditor: ReturnType<typeof monaco.editor.create>;
+onMounted(() => {
+  MonacoCodeEditor = monaco.editor.create(codeRef.value!, {
+    value: ['function x() {', '\tconsole.log("Hello world!");', '}'].join('\n'),
+    language: 'typescript',
+    theme: preferenceState.value.themeValue === 'dark' ? 'vs-dark' : '',
+    fontFamily: 'Fira Code, Consolas, "Courier New", monospace',
+    fontSize: 14,
+    fontLigatures: true
+  });
+  const languages = monaco.languages.getLanguages();
+  console.log(languages);
+});
+watch(
+  () => preferenceState.value.themeValue,
+  () => {
+    monaco.editor.setTheme(preferenceState.value.themeValue === 'dark' ? 'vs-dark' : 'vs');
+  }
+);
 
-const test = `
-import { createApp } from 'vue';
-import '@/styles/index.scss';
-import App from '@/App.vue';
-
-import 'virtual:uno.css';
-import { router } from '@/router';
-const app = createApp(App);
-app.use(router);
-app.mount('#app');
-`
-
-const result = transform(test, {
-    presets: ['typescript'],
-    filename: 'test.ts',
-})
-
-console.log(result);
+const naiveThemeVars = useThemeVars();
 </script>
-<style lang="scss" scoped></style>
+
+<style lang="scss">
+// .monaco-editor,
+// .monaco-diff-editor,
+// .monaco-component {
+//   --vscode-editor-background: v-bind('naiveThemeVars.cardColor');
+// }
+</style>

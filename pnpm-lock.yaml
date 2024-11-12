@@ -27,7 +27,7 @@ importers:
         specifier: '4'
         version: 4.4.5(vue@3.5.12(typescript@5.6.3))
     devDependencies:
-      '@iconify-json/fluent-emoji-flat':
+      '@iconify-json/fluent-emoji':
         specifier: ^1.2.1
         version: 1.2.1
       '@iconify-json/solar':
@@ -393,8 +393,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@iconify-json/fluent-emoji-flat@1.2.1':
-    resolution: {integrity: sha512-rnmQzGBYDbAd/f3z0fk6Ne11yy3wRnp3BXWLi7XwddNXXXSYdIX4FE64A2g1kW2fPh3vN1goVHcj924mZgWvTA==}
+  '@iconify-json/fluent-emoji@1.2.1':
+    resolution: {integrity: sha512-foBd/hSanmOOWFa8ogWAbLH31mFFuUfMOJQNQrC8Ylui7jIVtcsCqwkoXjz3OlPNfCvCClYdQIAVaWMXo93y2A==}
 
   '@iconify-json/solar@1.2.1':
     resolution: {integrity: sha512-LA3WZ7HOi5O/sEc2M+BcQNJYNFDnUKP+ZldmNf8kwndnCuFMo+fukt6tSu4BqYRsRgp/Ku4xnys1JGBDi+QtCQ==}
@@ -1427,7 +1427,7 @@ snapshots:
   '@esbuild/win32-x64@0.23.1':
     optional: true
 
-  '@iconify-json/fluent-emoji-flat@1.2.1':
+  '@iconify-json/fluent-emoji@1.2.1':
     dependencies:
       '@iconify/types': 2.0.0
 

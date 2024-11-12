@@ -23,8 +23,8 @@ export interface PreferenceType {
 /** 系统首选项 */
 export const preferenceState = ref<PreferenceType>({
   locale: 'en',
-  theme: 'dark',
-  themeValue: 'dark',
+  theme: 'light',
+  themeValue: 'light',
   primaryColor: '#1677ff',
-  headerHeight: 64
+  headerHeight: 50
 });
