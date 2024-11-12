@@ -52,9 +52,11 @@ n.b.: 对于规模较小项目，可直接所有 reactive 数据放在 store 中
 
 感谢以下优秀开源项目的支持：
 
-- [vue 3](https://vuejs.org/)
-- [naive-ui](https://www.naiveui.com/)
-- [unocss](https://unocss.dev/)
+- [vue3](https://vuejs.org)
+- [unocss](https://unocss.dev)
+- [@babel/standalone](https://babeljs.io/docs/babel-standalone)
+- [monaco-editor](https://microsoft.github.io/monaco-editor)
+- [naive-ui](https://www.naiveui.com)
 
 希望本项目能够助顺利进行移动端开发！ 🎉
 
