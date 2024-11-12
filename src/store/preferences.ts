@@ -14,13 +14,17 @@ export const designrReferenceColors = [
 
 export interface PreferenceType {
   theme: 'dark' | 'light' | 'auto';
+  themeValue: 'dark' | 'light';
   locale: string;
   primaryColor: string;
+  headerHeight: number;
 }
 
 /** 系统首选项 */
 export const preferenceState = ref<PreferenceType>({
   locale: 'en',
-  theme: 'light',
-  primaryColor: '#1677ff'
+  theme: 'dark',
+  themeValue: 'dark',
+  primaryColor: '#1677ff',
+  headerHeight: 64
 });

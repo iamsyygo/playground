@@ -1,9 +1,10 @@
 import { createMemoryHistory, createRouter, RouteRecordRaw } from 'vue-router';
+import Dashboard from '@/pages/index.vue';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: '',
+    component: Dashboard,
     children: []
   }
 ];

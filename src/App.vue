@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { NConfigProvider, darkTheme, dateZhCN, zhCN, NMessageProvider } from 'naive-ui'
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { preferenceState } from '@/store/preferences'
 import { createColorPatterns } from '@/utils/color-patterns'
 
@@ -21,11 +21,15 @@ const theme = computed(() => {
   return themeType === 'dark' ? darkTheme : null
 })
 
+watch(theme, (newVal) => {
+  preferenceState.value.themeValue = newVal === darkTheme ? 'dark' : 'light'
+})
+
 const primaryAccentColor = computed(() => {
   const primaryColor = preferenceState.value.primaryColor
   const colors = createColorPatterns(primaryColor)
-  const customPrimaryColor = colors.reduce((acc, color, index) => {
-    acc[`primaryColor${index}`] = color
+  const customPrimaryColor = colors.reduce<any>((acc, color, index) => {
+    acc[primaryColor + index] = color
     return acc
   }, {})
   return {
