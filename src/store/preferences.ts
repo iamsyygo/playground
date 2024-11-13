@@ -18,6 +18,7 @@ export interface PreferenceType {
   locale: string;
   primaryColor: string;
   headerHeight: number;
+  paneSize: number;
 }
 
 /** 系统首选项 */
@@ -26,5 +27,6 @@ export const preferenceState = ref<PreferenceType>({
   theme: 'light',
   themeValue: 'light',
   primaryColor: '#1677ff',
-  headerHeight: 50
+  headerHeight: 50,
+  paneSize: 0.5
 });

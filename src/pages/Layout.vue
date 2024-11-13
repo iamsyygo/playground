@@ -1,14 +1,12 @@
 <template>
   <n-layout w-full h-full>
-    <n-layout-header
-      :inverted="preferenceState.themeValue === 'dark'"
-      bordered
-      :style="{ height: preferenceState.headerHeight + 'px' }"
-    >
+    <n-layout-header :inverted="preferenceState.themeValue === 'dark'" bordered
+      :style="{ height: preferenceState.headerHeight + 'px' }">
       <layout-header />
     </n-layout-header>
     <n-layout-content :content-style="{ height: `calc(100vh - ${preferenceState.headerHeight}px)` }">
-      <n-split direction="horizontal" :max="0.75" :min="0.25" :resize-trigger-size="2">
+      <n-split direction="horizontal" :max="0.75" :min="0.25" :resize-trigger-size="2"
+        :default-size="preferenceState.paneSize" @update-size="preferenceState.paneSize = $event">
         <template #1>
           <slot name="left"></slot>
         </template>

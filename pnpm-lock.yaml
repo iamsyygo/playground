@@ -17,6 +17,9 @@ importers:
       await-to-js:
         specifier: ^3.0.0
         version: 3.0.0
+      mime:
+        specifier: ^4.0.4
+        version: 4.0.4
       monaco-editor:
         specifier: ^0.52.0
         version: 0.52.0
@@ -1014,6 +1017,11 @@ packages:
   micromatch@4.0.8:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
     engines: {node: '>=8.6'}
+
+  mime@4.0.4:
+    resolution: {integrity: sha512-v8yqInVjhXyqP6+Kw4fV3ZzeMRqEW6FotRsKXjRS5VMTNIuXsdRoAvklpoRgSqXm6o9VNH4/C0mgedko9DdLsQ==}
+    engines: {node: '>=16'}
+    hasBin: true
 
   minimatch@9.0.5:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==}
@@ -2108,6 +2116,8 @@ snapshots:
       braces: 3.0.3
       picomatch: 2.3.1
     optional: true
+
+  mime@4.0.4: {}
 
   minimatch@9.0.5:
     dependencies:
